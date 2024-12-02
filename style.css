@@ -1,0 +1,293 @@
+* {
+    font-family: Poppins;
+}
+
+body {
+    background-color: #f2f9ff;
+    color: #223344;
+    padding: 48px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    flex-direction: row-reverse;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: none; 
+}
+
+.nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 16px;
+    margin-top: 0;
+}
+
+.alarado {
+    margin-left: 35px;
+    font-size: 2rem;
+}
+
+.img {
+    height: 500px;
+    margin-top: 20px;
+}
+
+.started {
+    color: #f2f9ff;
+    background-color: #273fa9;
+    border-radius: 15px;
+    border: none;
+    padding: 16px 48px;
+    font-size: 1rem;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+a {
+    color: #111629;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3.75rem;
+    margin: 0;
+    text-wrap: wrap;
+}
+
+h2 {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+p {
+    font-weight: 500;
+    font-size: 0.825;
+    display: flex;
+    margin-top: 32px;
+    margin-right: 16px;
+    text-wrap: nowrap;
+    gap: 9px;
+}
+
+.contenido {
+    width: 30%;
+}
+
+.parrafo {
+    display: flex;
+    margin: 0;
+}
+
+.demo {
+    text-decoration: none;
+    border-bottom: #273fa9 2px solid;
+}
+
+.cuadrado-contenedor {
+    /* Ajusta el ancho y alto según tus necesidades */
+    width: 50px;
+    height: 50px;
+    margin-left: 15%;
+
+}
+
+.cuadrado {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    transform: rotate(75);
+    border-radius: 2px;
+}
+
+.azul {
+    background-color: #2A4DD0;
+    /* Posiciona el cuadrado azul */
+    transform: rotate(45deg);
+    margin-top: 15px;
+}
+
+.verde {
+    background-color: #4CA154;
+    transform: rotate(45deg);
+    margin-left: 8px;
+    margin-top: 15px;
+}
+
+.darkmode {
+    background-color: #111629;
+    color: #f2f9ff;
+}
+
+.darkmodep {
+    color: #f2f9ff;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111629;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: url(./resources/Sun_fill.svg);
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #111629;
+    transition: 0.4s;
+}
+
+input:checked+.slider {
+    background-color: #f2f9ff;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+    content: url(./resources/Moon_fill.svg);
+    background-color: #f2f9ff;
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.hamburguesa, .cerrar {
+    display: none;
+}
+
+li {
+    list-style: none;
+}
+
+@media (max-width:640px) {
+    .nav {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #ffffff;
+        padding: 100px;
+        font-size: 1.75rem;
+        margin: 0;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        z-index: 1;
+    }
+    .nav.visible, .switch.visible{
+        opacity: 1;
+        visibility: visible;
+    }
+    .darkmode{
+        background-color: #111629;
+    }
+    li{
+        padding: 25px;
+    }
+    
+    .switch {
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 530px;
+        margin-right: 210px;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contenido {
+        width: 100vw;
+    }
+
+    .cuadrado-contenedor {
+        margin: 0;
+    }
+
+    body {
+        padding: 0;
+        width: 100vw;
+    }
+
+    .hamburguesa {
+        display: block;
+        position: absolute;
+        background-color: transparent;
+        border: none;
+        top: 0;
+        right: 0;
+        margin: 35px;
+        height: 32px;
+        width: 32px;
+    }
+    .cerrar{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 50px;
+        background-color: transparent;
+        width: 32px;
+        height: 32px;
+        text-align: center;
+        padding: 0;
+        border: none;
+        fill: #ffffff;
+    }
+    .icono{
+        fill: #223344;
+    }
+    .oscuro{
+        fill: #ffffff;
+    }
+}
