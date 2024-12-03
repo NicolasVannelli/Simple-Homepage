@@ -13,7 +13,7 @@ const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
 
 if (isDarkMode) {
     body.classList.add('darkmode');
-    nav.classList.add('darkmode');
+    nav.classList.add('darkmodep');
     icono.forEach(nose=>{
         nose.classList.add('oscuro')
     })
